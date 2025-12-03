@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rota Zênite | Links</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === CONFIGURAÇÕES GERAIS (Identidade Rota Zênite) === */
+        :root {
+            --bg-deep: #050A14;       /* Azul Zênite (Fundo Base) */
+            --bg-gradient: radial-gradient(circle at 50% 10%, #240046 0%, #050A14 60%); /* Efeito Nebulosa */
+            --text-main: #F0F4F8;     /* Branco Gelo */
+            --text-muted: #B8C1EC;    /* Cinza Azulado */
+            --accent: #9D4EDD;        /* Violeta Neon */
+            --accent-glow: 0 0 15px rgba(157, 78, 221, 0.4);
+            --card-bg: rgba(255, 255, 255, 0.05); /* Vidro fumê */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-deep);
+            background-image: var(--bg-gradient);
+            background-attachment: fixed; /* Fundo fixo estilo espacial */
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Container Principal (Estilo Mobile/Landing Page) */
+        .container {
+            width: 100%;
+            max-width: 480px; /* Largura máxima estilo celular */
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        /* === CABEÇALHO (Hero) === */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            box-shadow: var(--accent-glow);
+            margin-bottom: 1rem;
+            background-color: #000; /* Placeholder se não tiver foto */
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(to right, #fff, #9D4EDD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* === ÍCONES TEMÁTICOS (A Tríade) === */
+        .zenite-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        
+        .zenite-icons span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+        
+        .zenite-icons i {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            text-shadow: 0 0 10px var(--accent);
+        }
+
+        /* === BOTÕES (Links) === */
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .btn {
+            display: block;
+            padding: 1rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            border-radius: 12px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn:hover {
+            background: rgba(157, 78, 221, 0.2);
+            border-color: var(--accent);
+            box-shadow: var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-highlight {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+        }
+        
+        .btn-highlight:hover {
+            background: #7b2cbf;
+        }
+
+        /* === VÍDEO (Embed) === */
+        .video-wrapper {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* === RODAPÉ === */
+        footer {
+            margin-top: auto;
+            padding: 2rem 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .social-row {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .social-row a {
+            color: var(--text-main);
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-row a:hover {
+            color: var(--accent);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <img src="zenite.png" alt="Foto Perfil Rota Zênite" class="profile-img">
+        
+        <h1>ROTA ZÊNITE</h1>
+        <p class="subtitle">A busca pelo ponto mais alto da jornada. ☀️🌍✨<br>Do asfalto ao cosmos.</p>
+
+        <div class="zenite-icons">
+            <span><i class="fas fa-mountain"></i>Terra</span>
+            <span><i class="fas fa-compass"></i>Rota</span>
+            <span><i class="fas fa-star"></i>Cosmos</span>
+        </div>
+
+        <div class="links-group">
+            <a href="https://www.youtube.com/@rotazenite" class="btn btn-highlight">
+                <i class="fab fa-youtube" style="margin-right: 8px;"></i> Inscreva-se no Canal
+            </a>
+        </div>
+
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="links-group">
+            <a href="https://www.instagram.com/rotazenite" class="btn">
+                <i class="fab fa-instagram" style="margin-right: 8px;"></i> Me siga no Instagram
+            </a>
+            <a href="#" class="btn">
+                <i class="fas fa-hiking" style="margin-right: 8px;"></i> Meu Kit de Viagem
+            </a>
+            <a href="#" class="btn">
+                <i class="fas fa-plane" style="margin-right: 8px;"></i> Seguro Nômade (Desconto)
+            </a>
+            <a href="mailto:contato@rotazenite.com" class="btn">
+                <i class="fas fa-envelope" style="margin-right: 8px;"></i> Contato / Parcerias
+            </a>
+        </div>
+
+        <footer>
+            <div class="social-row">
+                <a href="https://www.instagram.com/rotazenite"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@rotazenite"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@rotazenite"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>Somos poeira das estrelas viajando.<br>© 2025 Rota Zênite</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
